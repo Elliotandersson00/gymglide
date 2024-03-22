@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gymglide/screens/login_screen.dart';
+import 'package:gymglide/screens/register_screen.dart'; // Import the RegisterScreen
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -38,6 +39,21 @@ class HomeScreen extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 16.0),
                 textStyle: TextStyle(fontSize: 18.0),
+              ),
+            ),
+            SizedBox(height: 20.0), // Add some space between the buttons and the text
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => RegisterScreen()), // Navigate to the RegisterScreen
+                );
+              },
+              child: Text(
+                "Not a user? Register here",
+                style: TextStyle(
+                  color: Colors.blue, // Change the text color to blue
+                ),
               ),
             ),
           ],
